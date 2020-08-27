@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Operation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <table class="content-table" id="tableData">
+      <tr>
+        <thead>
+          <tr>
+            <th onclick=href = "style.css">Order ID</th>
+            <th>Ship Name</th>
+            <th>Freight</th>
+            <th>Order Date</th>
+            <th>
+              <input
+                type="button"
+                value=" + ADD NEW RECORD"
+                onclick="addRecord()"
+                id="button"
+                
+              />
+            </th>
+          </tr>
+        </thead>
+      </tr>
+      <tr>
+        <td><input type="number" name="orderID" id="orderID" /></td>
+        <td><input type="text" name="shipName" id="shipName" /></td>
+        <td><input type="number" name="freight" id="freight" /></td>
+        <td><input type="date" name="orderDate" id="orderDate" /></td>
+        <td></td>
+      </tr>
+
+    </table>
+
+ 
+    <script src="crud.js"></script>
+  </body>
+</html>
