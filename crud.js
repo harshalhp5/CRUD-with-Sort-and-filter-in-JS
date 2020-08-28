@@ -26,6 +26,8 @@ function readTableData () {
 function insertNewRecord(data) {
     var table = document.getElementById("tableData");
     var newRow = table.insertRow(table.length);
+    
+    newRow.className = "item";
 
     cell0 = newRow.insertCell(0);
     cell0.innerHTML = data.orderID;
@@ -77,3 +79,28 @@ function onDelete(td) {
     document.getElementById("tableData").deleteRow(row.rowIndex);
     resetForm();
 }
+
+
+//Filter Function
+function filter(tableName,filterFieldName,position) {
+    var input, filter, table, rows, td, i, txtValue;
+    input = document.getElementById(filterFieldName);
+    filter = input.value.toUpperCase();
+    table = document.getElementById(tableName);// accepted table
+    rows = table.getElementsByTagName("tr"); //return array of rows
+    for (i = 3; i < rows.length; i++) {
+      td = rows[i].getElementsByTagName("td")[position];
+      if (td) {
+        
+        txtValue = td.textContent || td.innerText;
+        
+    
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          rows[i].style.display = "";
+        } else {
+          rows[i].style.display = "none";
+        }
+      }       
+    }
+  }

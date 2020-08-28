@@ -7,43 +7,48 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    
     <table class="content-table" id="tableData">
-      <tr>
-        <thead>
+      <thead>
           <tr>
-            <th onclick=href = "style.css">Order ID</th>
-            <th>Ship Name</th>
-            <th>Freight</th>
-            <th>Order Date</th>
-            <th>
-              <input
-                type="button"
-                value=" + ADD NEW RECORD"
-                onclick="addRecord()"
-                id="button"
-                
-              />
-            </th>
+            <th onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(1)')" class="headerSortUp">Order ID</th>
+            <th onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(2)')" class="headerSortUp">Ship Name</th>
+            <th onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(3)')" class="headerSortUp">Freight</th>
+            <th onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(4)')" class="headerSortUp">Order Date</th>
+            <th>Operations</th>
           </tr>
-        </thead>
-      </tr>
+      </thead>
+      <div class="scrollit">
+      <tbody>
       <tr>
-          <td><input type="text" id="myInput" onkeyup="filterFunc()" placeholder="Search for Order IDs.."></td>
-          <td><input type="text" id="myInput" onkeyup="filterFunc()" placeholder="Search for Ship names.."></td>
-          <td><input type="text" id="myInput" onkeyup="filterFunc()" placeholder="Search for Freights.."></td>
-          <td><input type="text" id="myInput" onkeyup="filterFunc()" placeholder="Search by Order Date.."></td>
+          <td><input type="text" id="filterOrderID" onkeyup="filter('tableData','filterOrderID','0')" placeholder="Search for Order IDs.."></td>
+          <td><input type="text" id="filterShip" onkeyup="filter('tableData','filterShip','1')" placeholder="Search for Ship names.."></td>
+          <td><input type="text" id="filterFreight" onkeyup="filter('tableData','filterFreight','2')" placeholder="Search for Freights.."></td>
+          <td><input type="date" id="filterOrderDate" onkeyup="filter('tableData','filterOrderDate','3')" placeholder="Search by Order Date.."></td>
+          <td style="font-weight: lighter; text-align: center;">Filter</td>
       </tr>
       <tr>
         <td><input type="number" name="orderID" id="orderID" /></td>
         <td><input type="text" name="shipName" id="shipName" /></td>
         <td><input type="number" name="freight" id="freight" /></td>
         <td><input type="date" name="orderDate" id="orderDate" /></td>
-        <td></td>
-      </tr>
+        <td>
+          <input
+            type="button"
+            value=" + ADD NEW RECORD"
+            onclick="addRecord()"
+            id="button"
+            
+          />
+        </td>
 
+      </tr>
+    </tbody>
+  </div>
     </table>
 
  
     <script src="crud.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
   </body>
 </html>
