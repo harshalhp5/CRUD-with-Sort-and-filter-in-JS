@@ -1,10 +1,10 @@
 .content-table {
   border-collapse: collapse;
   margin: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   min-width: 250px;
   border-radius: 5px 5px 0 0;
-  overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .content-table thead tr {
@@ -13,7 +13,11 @@
   text-align: left;
   font-weight: bold;
 }
-
+.content-table .scrollTable { 
+  height: 50px;
+  overflow-y:scroll;
+  overflow-x: hidden;
+}
 .content-table th,
 .content-table td {
   padding: 10px 15px;
@@ -35,7 +39,8 @@
   background-color: white;
   color: black;
   border: 2px solid #555555;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 #editBtn {
@@ -43,7 +48,8 @@
   background-color: white;
   color: black;
   border: 2px solid #4caf50;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 #deleteBtn {
@@ -51,15 +57,24 @@
   background-color: white;
   color: black;
   border: 2px solid #f44336;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .headerSortUp {
-  background: url("data:image/gif;base64, R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==") no-repeat 99%;
+  background: url("data:image/gif;base64, R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==")
+    no-repeat 99%;
 }
 
-/* Scrollable table */
-.scrollit {
-  /* overflow:scroll; */
-  /* height:100px; */
+/* Styling for Input Text Field */
+
+.inputStyle {
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: auto;
 }
+
+/* Scrolling */
+
+

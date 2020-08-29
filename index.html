@@ -5,49 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRUD Operation</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Scripts for Filter Icon -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     
     <table class="content-table" id="tableData">
       <thead>
-          <tr>
-            <th onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(1)')" class="headerSortUp">Order ID</th>
-            <th onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(2)')" class="headerSortUp">Ship Name</th>
-            <th onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(3)')" class="headerSortUp">Freight</th>
-            <th onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(4)')" class="headerSortUp">Order Date</th>
-            <th>Operations</th>
-          </tr>
+        <tr>
+          <th
+            onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(1)')"
+            class="headerSortUp"
+          >
+            Order ID
+          </th>
+          <th
+            onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(2)')"
+            class="headerSortUp"
+          >
+            Ship Name
+          </th>
+          <th
+            onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(3)')"
+            class="headerSortUp"
+          >
+            Freight
+          </th>
+          <th
+            onclick="w3.sortHTML('#tableData', '.item', 'td:nth-child(4)')"
+            class="headerSortUp"
+          >
+            Order Date
+          </th>
+          <th style="text-align: center">Operations</th>
+        </tr>
       </thead>
-      <div class="scrollit">
-      <tbody>
-      <tr>
-          <td><input type="text" id="filterOrderID" onkeyup="filter('tableData','filterOrderID','0')" placeholder="Search for Order IDs.."></td>
-          <td><input type="text" id="filterShip" onkeyup="filter('tableData','filterShip','1')" placeholder="Search for Ship names.."></td>
-          <td><input type="text" id="filterFreight" onkeyup="filter('tableData','filterFreight','2')" placeholder="Search for Freights.."></td>
-          <td><input type="date" id="filterOrderDate" onkeyup="filter('tableData','filterOrderDate','3')" placeholder="Search by Order Date.."></td>
-          <td style="font-weight: lighter; text-align: center;">Filter</td>
-      </tr>
-      <tr>
-        <td><input type="number" name="orderID" id="orderID" /></td>
-        <td><input type="text" name="shipName" id="shipName" /></td>
-        <td><input type="number" name="freight" id="freight" /></td>
-        <td><input type="date" name="orderDate" id="orderDate" /></td>
-        <td>
-          <input
-            type="button"
-            value=" + ADD NEW RECORD"
-            onclick="addRecord()"
-            id="button"
-            
-          />
-        </td>
+      <div id="scrollTable">
+        <tbody>
+         
 
-      </tr>
-    </tbody>
-  </div>
+          <tr>
+            <td>
+              <input
+                type="text"
+                class="inputStyle"
+                id="filterOrderID"
+                onkeyup="filter('tableData','filterOrderID','0')"
+                placeholder="Search for Order IDs.."
+              /><span class="glyphicon">&#xe138;</span>
+            </td>
+            <td>
+              <input
+                type="text"
+                class="inputStyle"
+                id="filterShip"
+                onkeyup="filter('tableData','filterShip','1')"
+                placeholder="Search for Ship names.."
+              /><span class="glyphicon">&#xe138;</span>
+            </td>
+            <td>
+              <input
+                type="text"
+                class="inputStyle"
+                id="filterFreight"
+                onkeyup="filter('tableData','filterFreight','2')"
+                placeholder="Search for Freights.."
+              /><span class="glyphicon">&#xe138;</span>
+            </td>
+            <td>
+              <input
+                type="date"
+                class="inputStyle"
+                id="filterOrderDate"
+                onkeyup="filter('tableData','filterOrderDate','3')"
+                placeholder="Search by Order Date.."
+              /><span class="glyphicon">&#xe138;</span>
+            </td>
+            <td style="font-weight: lighter; text-align: center">Filter</td>
+          </tr>
+          <div id="scrollable"></div>
+          <tr>
+            <td>
+              <input
+                type="number"
+                class="inputStyle"
+                name="orderID"
+                id="orderID"
+                placeholder="Enter Order ID here.."
+              /><span id="orderIDmsg"></span>
+            </td>
+            <td>
+              <input
+                type="text"
+                class="inputStyle"
+                name="shipName"
+                id="shipName"
+                placeholder="Enter Ship Name here.."
+              /><span id="shipMsg"></span>
+            </td>
+            <td>
+              <input
+                type="number"
+                class="inputStyle"
+                name="freight"
+                id="freight"
+                placeholder="Enter Freight here.."
+              /><span id="freightMsg"></span>
+            </td>
+            <td>
+              <input
+                type="date"
+                class="inputStyle"
+                name="orderDate"
+                id="orderDate"
+                placeholder="Enter Order Date here.."
+              /><span id="dateMsg"></span>
+            </td>
+            <td>
+              <input
+                type="button"
+                value=" + ADD NEW RECORD"
+                onclick="addRecord()"
+                id="button"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </div>
+
+        <!-- <tr>
+          <td>The Total Number of Orders : </td>
+        </tr> -->
+   
+     
     </table>
+  
 
- 
+
     <script src="crud.js"></script>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
   </body>
