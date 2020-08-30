@@ -26,6 +26,7 @@ function addRecord() {
     insertNewRecord(readData);
   else updateRecord(readData);
   resetForm();
+
 }
 
 // Reading the Entered data
@@ -60,9 +61,6 @@ function insertNewRecord(data) {
   cell4 = newRow.insertCell(4);
   cell4.innerHTML = `<input type="button" value="EDIT" onClick = "onEdit(this)" id = "editBtn"> &nbsp &nbsp &nbsp <input type="button" value="DELETE" onClick = "onDelete(this)" id = "deleteBtn">`;
 
-
-  // table.insertRow(table.length) = innerText(`The Total Number of Orders : ${#tableData > tbody > tr.length}`);
-
 }
 
 // Resetting values
@@ -72,6 +70,7 @@ function resetForm() {
   document.getElementById("freight").value = "";
   document.getElementById("orderDate").valueAsDate = new Date();
   selectedRow = null;
+  refreshCount();
 }
 
 // Creating function for Edit Button
@@ -121,3 +120,9 @@ function filter(tableName, filterFieldName, position) {
 
 // Displaying Default Today's Date
 document.querySelector("#orderDate").valueAsDate = new Date();
+
+function refreshCount() {
+document.getElementById("orderCount").innerHTML = "Total Number of Orders : "+(document.getElementById("tableData").rows.length - 3);
+}
+refreshCount();
+

@@ -14,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-    
+    <div id="scrollable">
     <table class="content-table" id="tableData">
       <thead>
         <tr>
@@ -45,10 +45,8 @@
           <th style="text-align: center">Operations</th>
         </tr>
       </thead>
-      <div id="scrollTable">
-        <tbody>
-         
-
+      
+      <tbody class="scrollable">
           <tr>
             <td>
               <input
@@ -88,7 +86,6 @@
             </td>
             <td style="font-weight: lighter; text-align: center">Filter</td>
           </tr>
-          <div id="scrollable"></div>
           <tr>
             <td>
               <input
@@ -135,16 +132,16 @@
               />
             </td>
           </tr>
+          
         </tbody>
-      </div>
-
-        <!-- <tr>
-          <td>The Total Number of Orders : </td>
-        </tr> -->
-   
-     
+        
     </table>
+
+  </div>
   
+
+      <h4 id="orderCount"></h4>
+   
 
 
     <script src="crud.js"></script>
